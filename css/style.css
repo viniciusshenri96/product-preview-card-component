@@ -1,0 +1,150 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
+ */
+*:focus,
+*:focus-visible {
+  outline: #646464 dotted 4px;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    background-attachment: initial !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-animation-delay: -1ms !important;
+    animation-delay: -1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+button,
+[type=button] {
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f2eae2;
+  color: #6c7289;
+  line-height: 1.5;
+  /* improves text rendering */
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.item {
+  max-width: 680px;
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 34.375rem) {
+  .item {
+    grid-template-columns: 1fr;
+  }
+}
+.item__img {
+  border-radius: 0.5rem 0 0 0.5rem;
+  object-fit: cover;
+  object-position: right;
+}
+.item__content {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+@media (max-width: 42.5rem) {
+  .item__content {
+    padding: 1.5rem;
+  }
+}
+.item__content .item__title {
+  display: block;
+  font: 500 0.75rem/1.25 "Montserrat", sans-serif;
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.item__content .item__name-perfume {
+  font: 700 2rem/1 "Fraunces", serif;
+  color: #1c232b;
+  margin-bottom: 1.5rem;
+}
+.item__content .item__desc {
+  font: 500 0.875rem/1.64 "Montserrat", sans-serif;
+  margin-bottom: 1.8125rem;
+}
+.item__content .item__price {
+  font: 700 2rem/1 "Fraunces", serif;
+  color: #3d8168;
+  display: flex;
+  align-items: center;
+  gap: 1.1875rem;
+  margin-bottom: 1.875rem;
+}
+.item__content .item__price-scratched {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.77;
+  font-weight: 500;
+  color: #6c7289;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0;
+  background-color: #3d8168;
+  padding: 0.9375rem 3.875rem 1rem 3.9375rem;
+  font-size: 0.875rem;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: 0.4s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover {
+  background-color: #1a4032;
+}
+
+/*# sourceMappingURL=style.css.map */

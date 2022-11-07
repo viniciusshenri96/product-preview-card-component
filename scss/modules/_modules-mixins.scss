@@ -1,0 +1,11 @@
+@mixin width-container {
+  max-width: 680px;
+  padding: 0 2.5rem;
+}
+
+@mixin center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

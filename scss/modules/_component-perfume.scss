@@ -1,0 +1,69 @@
+@use "../base/variables" as *;
+@use "../base/base-mixins" as *;
+@use "modules-mixins";
+@use "../abstracts/functions" as *;
+
+$lh-500: 500;
+$lh-700: 700;
+
+.item {
+  @include modules-mixins.width-container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include mobile-550 {
+    grid-template-columns: 1fr;
+  }
+
+  &__img {
+    border-radius: rem(8) 0 0 rem(8);
+    object-fit: cover;
+    object-position: right;
+  }
+
+  &__content {
+    padding: rem(32);
+    background-color: $white;
+    border-radius: 0 rem(8) rem(8) 0;
+
+    @include mobile {
+      padding: rem(24);
+    }
+
+    .item__title {
+      display: block;
+      font: $lh-500 rem(12) / #{1.25} $font-1;
+      letter-spacing: rem(5);
+      text-transform: uppercase;
+      margin-bottom: rem(20);
+    }
+
+    .item__name-perfume {
+      font: $lh-700 rem(32) / #{1} $font-2;
+      color: $main-title;
+      margin-bottom: rem(24);
+    }
+
+    .item__desc {
+      font: $lh-500 rem(14) / #{1.64} $font-1;
+      margin-bottom: rem(29);
+    }
+
+    .item__price {
+      font: $lh-700 rem(32) / #{1} $font-2;
+      color: $color-secondary;
+      display: flex;
+      align-items: center;
+      gap: rem(19);
+      margin-bottom: rem(30);
+
+      &-scratched {
+        font-family: $font-1;
+        font-size: rem(13);
+        line-height: 1.77;
+        font-weight: $lh-500;
+        color: $color-primary;
+      }
+    }
+  }
+}
