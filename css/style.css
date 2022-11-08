@@ -76,6 +76,7 @@ body {
 @media (max-width: 46.25rem) {
   body {
     align-items: flex-start;
+    padding: 1.75rem 0;
   }
 }
 
