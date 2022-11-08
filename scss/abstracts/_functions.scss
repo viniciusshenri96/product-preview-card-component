@@ -1,11 +1,11 @@
 @use "sass:math";
 
-@function rem($number) {
-  @if unitless($number) {
-    $default-one-rem-in-pixel: 16;
+@function rem($value) {
+  @if unitless($value) {
+    $default-pixel: 16;
 
-    @return calc($number / $default-one-rem-in-pixel) * 1rem;
+    @return calc($value / $default-pixel) * 1rem;
   }
 
-  @error "Sorry, this '#{$number}' must have not any unit";
+  @error "Sorry, this '#{$value}' must have not any unit";
 }

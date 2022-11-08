@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="This HTML & CSS-only challenge will be perfect for anyone starting to build responsive projects."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product preview card</title>
     <link rel="stylesheet" href="css/style.css" />
@@ -11,6 +15,10 @@
     <main>
       <article class="item">
         <picture class="item__picture">
+          <source
+            media="(max-width: 560px)"
+            srcset="./images/image-product-mobile.jpg"
+          />
           <img
             class="item__img"
             src="./images/image-product-desktop.jpg"
@@ -18,7 +26,7 @@
           />
         </picture>
         <div class="item__content">
-          <span class="item__title">Perfume</span>
+          <p class="item__title">Perfume</p>
           <h1 class="item__name-perfume">Gabrielle Essence Eau De Parfum</h1>
           <p class="item__desc">
             A floral, solar and voluptuous interpretation composed by Olivier

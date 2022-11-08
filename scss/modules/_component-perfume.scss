@@ -1,17 +1,22 @@
 @use "../base/variables" as *;
 @use "../base/base-mixins" as *;
-@use "modules-mixins";
 @use "../abstracts/functions" as *;
 
 $lh-500: 500;
 $lh-700: 700;
 
+main {
+  display: flex;
+}
+
 .item {
-  @include modules-mixins.width-container;
+  max-width: rem(680);
+  padding: 0 rem(40);
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @include mobile-550 {
+  @include screen-560 {
+    padding: 0 rem(16);
     grid-template-columns: 1fr;
   }
 
@@ -19,6 +24,10 @@ $lh-700: 700;
     border-radius: rem(8) 0 0 rem(8);
     object-fit: cover;
     object-position: right;
+
+    @include screen-560 {
+      border-radius: rem(8) rem(8) 0 0;
+    }
   }
 
   &__content {
@@ -26,27 +35,48 @@ $lh-700: 700;
     background-color: $white;
     border-radius: 0 rem(8) rem(8) 0;
 
-    @include mobile {
+    @include screen-560 {
+      border-radius: 0 0 rem(8) rem(8);
       padding: rem(24);
     }
 
     .item__title {
-      display: block;
+      display: inline-block;
       font: $lh-500 rem(12) / #{1.25} $font-1;
       letter-spacing: rem(5);
       text-transform: uppercase;
       margin-bottom: rem(20);
+
+      @include screen-560 {
+        margin-bottom: rem(12);
+      }
     }
 
     .item__name-perfume {
       font: $lh-700 rem(32) / #{1} $font-2;
       color: $main-title;
       margin-bottom: rem(24);
+
+      @include screen-560 {
+        margin-bottom: rem(16);
+      }
+
+      @include screen-330 {
+        font-size: rem(24);
+      }
     }
 
     .item__desc {
       font: $lh-500 rem(14) / #{1.64} $font-1;
       margin-bottom: rem(29);
+
+      @include screen-560 {
+        margin-bottom: rem(24);
+      }
+
+      @include screen-330 {
+        font-size: rem(12);
+      }
     }
 
     .item__price {
@@ -57,11 +87,16 @@ $lh-700: 700;
       gap: rem(19);
       margin-bottom: rem(30);
 
+      @include screen-560 {
+        margin-bottom: rem(20);
+      }
+
+      @include screen-330 {
+        font-size: rem(24);
+      }
+
       &-scratched {
-        font-family: $font-1;
-        font-size: rem(13);
-        line-height: 1.77;
-        font-weight: $lh-500;
+        font: $lh-500 rem(13) / #{1.77} $font-1;
         color: $color-primary;
       }
     }

@@ -1,5 +1,6 @@
 @use "../base/variables" as *;
-@use "../modules/modules-mixins" as *;
+@use "../abstracts/functions" as *;
+@use "../base/base-mixins" as *;
 
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
@@ -46,9 +47,6 @@ img {
 html,
 body {
   height: 100%;
-}
-
-html {
   overflow-x: hidden;
 }
 
@@ -67,5 +65,22 @@ body {
   /* improves text rendering */
   -webkit-font-smoothing: antialiased;
 
-  @include center-container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
+
+  @include screen-1000 {
+    align-items: flex-start;
+    padding: rem(80) 0;
+  }
+
+  @include screen-912 {
+    align-items: center;
+  }
+
+  @include screen-740 {
+    align-items: flex-start;
+    // padding: rem(28) 0;
+  }
 }
