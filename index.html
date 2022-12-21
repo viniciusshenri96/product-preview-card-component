@@ -1,52 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="This HTML & CSS-only challenge will be perfect for anyone starting to build responsive projects."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product preview card</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <main>
-      <article class="item">
-        <picture class="item__picture">
-          <source
-            media="(max-width: 560px)"
-            srcset="./images/image-product-mobile.jpg"
-          />
-          <img
-            class="item__img"
-            src="./images/image-product-desktop.jpg"
-            alt=""
-          />
-        </picture>
-        <div class="item__content">
-          <p class="item__title">Perfume</p>
-          <h1 class="item__name-perfume">Gabrielle Essence Eau De Parfum</h1>
-          <p class="item__desc">
-            A floral, solar and voluptuous interpretation composed by Olivier
-            Polge, Perfumer-Creator for the House of CHANEL.
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description"
+    content="This HTML & CSS-only challenge will be perfect for anyone starting to build responsive projects." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product preview card</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <main>
+    <article class="item">
+      <picture class="item__picture">
+        <source media="(max-width: )" srcset="./images/image-product-mobile.jpg" />
+        <img class="item__img" src="./images/image-product-desktop.jpg" alt="" />
+      </picture>
+      <div class="item__content">
+        <p class="item__title">Perfume</p>
+        <h1 class="item__name-perfume">Gabrielle Essence Eau De Parfum</h1>
+        <p class="item__desc">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+        <p class="item__price">
+          $149.99
+          <span class="item__price-scratched">$169,99</span>
+        </p>
+        <button type="button" class="btn">
+          <svg width="15" height="16" aria-hidden="true">
+            <path
+              d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z"
+              fill="#FFF" />
+          </svg>
+          Add to cart
+        </button>
+      </div>
+    </article>
+    <section class="details-container">
+      <div class="details">
+        <button class="btn__details active" data-tab="1">description</button>
+        <button class="btn__details" data-tab="2">Additional Information</button>
+        <button class="btn__details" data-tab="3">the art of detail</button>
+        <button class="btn__details" data-tab="4">Deliveries and return</button>
+      </div>
+
+
+      <div class="details__content active details__content-1">
+        <h3 class="details__subtitle">Product</h3>
+        <p class="details__desc">Inspired by the free and passionate woman who became Coco Chanel, GABRIELLE CHANEL
+          ESSENCE is a more voluptuous, intensely feminine interpretation of the original GABRIELLE CHANEL luminous
+          floral
+          fragrance. The striking square glass bottle is reimagined with bolder golden accents on the stopper and label.
+        </p>
+        <h3 class="details__subtitle">Composition</h3>
+        <p class="details__desc">Composed by In-House Perfumer Creator Olivier Polge, this deep and enveloping scent
+          evokes the true essence of Gabrielle Chanel. The fragrance is an imaginary bloom, faceted with jasmine,
+          ylang-ylang, orange blossom and the most captivating flower of all: Grasse tuberose. Solar and radiant with a
+          warm trail, it is the scent of a woman who follows her own path.</p>
+        <h3 class="details__subtitle">Art of perfuming</h3>
+        <p class="details__desc">The Eau de Parfum comes in a spray for easy application.
+        </p>
+      </div>
+
+
+      <div class="details__content details__content-2">
+        <h3 class="details__subtitle">Tamanho</h3>
+        <p class="details__desc">
+          100 ml
+        </p>
+        <h3 class="details__subtitle">List of ingredients</h3>
+        <p class="details__desc">
+          The ingredient list may vary from time to time. To confirm ingredients, please review the ingredient listing
+          on
+          the product page and on the package label.
+        </p>
+        <span class="details__desc">CHANEL 92200 Neuilly-sur-Seine</span>
+      </div>
+      <div class="details__content details__content-3">
+        <div class="details__content-box">
+          <h3 class="details__subtitle">The box</h3>
+          <p class="details__desc">The CHANEL box is a gift in itself. Exclusive and carefully prepared, with special
+            attention to the smallest details.</p>
+          <h3 class="details__subtitle">The Samples</h3>
+          <p class="details__desc">With each order, CHANEL offers you to choose two samples. To have time to be seduced.
           </p>
-          <p class="item__price">
-            $149.99
-            <span class="item__price-scratched"><strike>$169,99</strike></span>
-          </p>
-          <button type="button" class="btn">
-            <svg width="15" height="16" aria-hidden="true">
-              <path
-                d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z"
-                fill="#FFF"
-              />
-            </svg>
-            Add to cart
-          </button>
         </div>
-      </article>
-    </main>
-  </body>
+        <img class="details__img" src="images/image-box.jpg" alt="">
+      </div>
+      <div class="details__content details__content-4">
+        <h3 class="details__subtitle">Shipping</h3>
+        <p class="details__desc">
+          After confirmation of payment, the products will be sent by a third-party carrier contracted by CHANEL.
+        </p>
+        <ul class="details__list">
+          <li class="details__item">
+            <p>Shipping time and shipping cost vary according to the zip code of the delivery address of the order.</p>
+          </li>
+          <li class="details__item">
+            <p>The value will be informed after choosing the product(s) and confirming the delivery zip code.</p>
+          </li>
+          <li class="details__item">
+            <p>The period begins to run from the confirmation of payment of the order by the financial institution,
+              which
+              may vary according to the chosen payment method. Note that payments made by bank slip have a period of up
+              to
+              72 hours for confirmation by financial institutions.</p>
+          </li>
+        </ul>
+        <h3 class="details__subtitle">click and collect</h3>
+        <p class="details__desc">
+          Your product can also be picked up at a Chanel Boutique in São Paulo - SP or Campinas - SP. Click and Collect
+          option availability is subject to product stock. Some products and payment methods are not available for this
+          modality.
+        </p>
+        <h3 class="details__subtitle">Deadlines for exchanges and returns</h3>
+        <p class="details__desc">
+          Your product can also be picked up at a Chanel Boutique in São Paulo - SP or Campinas - SP. Click and Collect
+          option availability is subject to product stock. Some products and payment methods are not available for this
+          modality.
+        </p>
+      </div>
+
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
 </html>

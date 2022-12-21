@@ -1,41 +1,59 @@
-/* GOOGLE FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+/* GOOGLE FONTE */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+/* VARIABLES CSS */
+:root {
+  /* Colors */
+  --color-darkCyan: #3c8067;
+  --color-cream: #f2ebe3;
+  --color-veryDarkBlue: #1c232b;
+  --color-darkGrayishBlue: #6c7289;
+  --color-white: #ffffff;
+
+  /* Weights */
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
 *,
 *::after,
 *::before {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* better for people who browse with the keyboard and know where they are on the site, so I set a different style, making it more visible, taking it from the default.
  */
-*:focus,
+/* *:focus,
 *:focus-visible {
   outline: #646464 dotted 4px;
   outline-offset: 4px;
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
   *,
-*::before,
-*::after {
-    background-attachment: initial !important;
-    transition-delay: 0s !important;
-    transition-duration: 0s !important;
-    -webkit-animation-duration: 1ms !important;
-    animation-duration: 1ms !important;
-    -webkit-animation-delay: -1ms !important;
-    animation-delay: -1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 img {
   max-width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: left;
   display: block;
+}
+
+button,
+[type="button"] {
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
 }
 
 html,
@@ -44,177 +62,203 @@ body {
   overflow-x: hidden;
 }
 
-button,
-[type=button] {
-  -webkit-appearance: button;
-  text-transform: none;
-  overflow: visible;
-}
-
 body {
-  font-family: "Montserrat", sans-serif;
-  background-color: #f2eae2;
-  color: #6c7289;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
   line-height: 1.5;
+
   /* improves text rendering */
   -webkit-font-smoothing: antialiased;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 62.5rem) {
-  body {
-    align-items: flex-start;
-    padding: 5rem 0;
-  }
-}
-@media (max-width: 57rem) {
-  body {
-    align-items: center;
-  }
-}
-@media (max-width: 46.25rem) {
-  body {
-    align-items: flex-start;
-    padding: 1.75rem 0;
-  }
-}
-
-main {
-  display: flex;
 }
 
 .item {
-  max-width: 42.5rem;
-  padding: 0 2.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 120px 40px 120px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-@media (max-width: 35rem) {
-  .item {
-    padding: 0 1rem;
-    grid-template-columns: 1fr;
-  }
-}
+
 .item__img {
-  border-radius: 0.5rem 0 0 0.5rem;
-  object-fit: cover;
-  object-position: right;
+  border-radius: 10px 0 0 10px;
 }
-@media (max-width: 35rem) {
-  .item__img {
-    border-radius: 0.5rem 0.5rem 0 0;
-  }
-}
+
 .item__content {
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: var(--color-white);
+  border-radius: 0 10px 10px 0;
+  padding: 32px;
+  color: var(--color-darkGrayishBlue);
 }
-@media (max-width: 35rem) {
-  .item__content {
-    border-radius: 0 0 0.5rem 0.5rem;
-    padding: 1.5rem;
-  }
-}
-.item__content .item__title {
-  display: inline-block;
-  font: 500 0.75rem/1.25 "Montserrat", sans-serif;
-  letter-spacing: 0.3125rem;
+
+.item__title {
+  font: var(--fw-medium) 12px/1.25 "Montserrat";
+  letter-spacing: 5px;
+  margin-bottom: 20px;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
 }
-@media (max-width: 35rem) {
-  .item__content .item__title {
-    margin-bottom: 0.75rem;
-  }
+
+.item__name-perfume {
+  font: var(--fw-bold) 2rem/1 "Fraunces";
+  color: var(--color-veryDarkBlue);
+  margin-bottom: 24px;
+  max-width: 200px;
 }
-.item__content .item__name-perfume {
-  font: 700 2rem/1 "Fraunces", serif;
-  color: #1c232b;
-  margin-bottom: 1.5rem;
+
+.item__desc {
+  font: var(--fw-medium) 14px/1.64 "Montserrat";
+  margin-bottom: 29px;
 }
-@media (max-width: 35rem) {
-  .item__content .item__name-perfume {
-    margin-bottom: 1rem;
-  }
-}
-@media (max-width: 20.625rem) {
-  .item__content .item__name-perfume {
-    font-size: 1.5rem;
-  }
-}
-.item__content .item__desc {
-  font: 500 0.875rem/1.64 "Montserrat", sans-serif;
-  margin-bottom: 1.8125rem;
-}
-@media (max-width: 35rem) {
-  .item__content .item__desc {
-    margin-bottom: 1.5rem;
-  }
-}
-@media (max-width: 20.625rem) {
-  .item__content .item__desc {
-    font-size: 0.75rem;
-  }
-}
-.item__content .item__price {
-  font: 700 2rem/1 "Fraunces", serif;
-  color: #3d8168;
+
+.item__price {
+  font: var(--fw-bold) 2rem/1 "Fraunces";
+  color: var(--color-darkCyan);
   display: flex;
   align-items: center;
-  gap: 1.1875rem;
-  margin-bottom: 1.875rem;
+  gap: 19px;
+  margin-bottom: 30px;
 }
-@media (max-width: 35rem) {
-  .item__content .item__price {
-    margin-bottom: 1.25rem;
-  }
-}
-@media (max-width: 20.625rem) {
-  .item__content .item__price {
-    font-size: 1.5rem;
-  }
-}
-.item__content .item__price-scratched {
-  font: 500 0.8125rem/1.77 "Montserrat", sans-serif;
-  color: #6c7289;
+
+.item__price-scratched {
+  font: var(--fw-medium) 13px/1.77 "Montserrat";
+  text-decoration-line: line-through;
+  color: var(--color-darkGrayishBlue);
 }
 
 .btn {
+  border: none;
+  background: var(--color-darkCyan);
+  padding: 15px 62px;
+  border-radius: 8px;
+  color: var(--color-white);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  border: none;
-  background-color: #3d8168;
-  padding: 0.9375rem 3.875rem 1rem 3.9375rem;
-  font-size: 0.875rem;
-  font-family: "Montserrat", sans-serif;
-  color: #ffffff;
-  border-radius: 0.5rem;
-  transition: 0.4s;
+  gap: 12px;
+  font: var(--fw-bold) 14px/1.21 "Montserrat";
+  transition: 0.4s ease-in-out;
   cursor: pointer;
 }
+
 .btn:hover {
-  background-color: #1a4032;
+  background: #1a4032;
 }
-@media (max-width: 46.25rem) {
-  .btn {
-    white-space: nowrap;
+
+/* Product Details */
+.details {
+  max-width: 1190px;
+  padding: 0 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.details::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: var(--color-darkGrayishBlue);
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.btn__details {
+  border: none;
+  height: 40px;
+  background: none;
+  font: var(--fw-bold) 14px/1.25 "Montserrat";
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  color: var(--color-darkGrayishBlue);
+  transition: 0.4s ease-in-out;
+}
+
+.btn__details:hover {
+  color: var(--color-veryDarkBlue);
+}
+
+.btn__details::after {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background: var(--color-darkCyan);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s ease-in-out;
+  display: none;
+}
+
+.btn__details.active::after {
+  display: block;
+  animation: transitionAfter 0.4s forwards;
+}
+
+@keyframes transitionAfter {
+  from {
+    transform: translateX(-10px);
   }
-}
-@media (max-width: 35rem) {
-  .btn {
-    white-space: initial;
-    width: 100%;
-    justify-content: center;
-  }
-}
-@media (max-width: 20.625rem) {
-  .btn {
-    white-space: nowrap;
-    padding: 1rem 2rem;
+  to {
+    transform: translateX(0px);
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+.details__content {
+  max-width: 1090px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.details__subtitle {
+  font: var(--fw-bold) 18px/1.25 "Montserrat";
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.details__desc {
+  margin-bottom: 40px;
+}
+
+.details__content-2 {
+  margin-bottom: 40px;
+}
+
+.details__content-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+
+.details__img {
+  height: 512px;
+}
+
+.details__list {
+  /* list-style-position: inside; */
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+.details__content {
+  display: none;
+}
+
+.details__content.active {
+  display: grid;
+  align-content: start;
+  animation: slide-in 2s;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
