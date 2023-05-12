@@ -137,9 +137,15 @@ body {
   border: none;
   padding: 0.938rem;
   width: 100%;
+  cursor: pointer;
 
   font: var(--fw-bold) 0.875rem / 1.77 "Montserrat";
   color: var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: #1a4032;
 }
 
 @media (min-width: 540px) {
@@ -174,5 +180,9 @@ body {
 
   .product__desc {
     margin-bottom: 1.813rem;
+  }
+
+  .product__price {
+    margin-bottom: 1.875rem;
   }
 }
