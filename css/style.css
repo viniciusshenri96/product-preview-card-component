@@ -72,11 +72,107 @@ body {
 }
 
 .container {
-  max-width: 25.438rem;
-  padding: 1.75rem 1rem;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .product {
+  padding: 1.75rem 1rem;
   display: grid;
+}
+
+.product__img {
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+
+.product__box {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 0 0 0.625rem 0.625rem;
+}
+
+.product__info {
+  font: var(--fw-medium) 0.75rem / 1.25 "Montserrat";
+  color: var(--color-darkGrayishBlue);
+  text-transform: uppercase;
+  letter-spacing: 0.313rem;
+  margin-bottom: 0.75rem;
+}
+
+.product__name {
+  font: var(--fw-bold) 2rem / 1 "Fraunces";
+  color: var(--color-veryDarkBlue);
+  margin-bottom: 1rem;
+}
+
+.product__desc {
+  font: var(--fw-medium) 0.875rem / 1.64 "Montserrat";
+  color: var(--color-darkGrayishBlue);
+  margin-bottom: 1.5rem;
+}
+
+.product__price {
+  display: flex;
+  align-items: center;
+  column-gap: 1.188rem;
+  font: var(--fw-medium) 2rem / 1 "Fraunces";
+  color: var(--color-darkCyan);
+  margin-bottom: 1.25rem;
+}
+
+.product__price-sub {
+  font: var(--fw-medium) 0.813rem / 1.77 "Montserrat";
+  color: var(--color-darkGrayishBlue);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.75rem;
+  background: var(--color-darkCyan);
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.938rem;
+  width: 100%;
+
+  font: var(--fw-bold) 0.875rem / 1.77 "Montserrat";
+  color: var(--color-white);
+}
+
+@media (min-width: 540px) {
+  .product {
+    padding: 0 1.5rem;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product__img {
+    border-radius: 0.625rem 0 0 0.625rem;
+  }
+
+  .product__box {
+    padding: 2rem;
+    border-radius: 0 0.625rem 0.625rem 0;
+  }
+
+  .product__img-box,
+  .product__box {
+    max-width: 18.75rem;
+    margin: 0 auto;
+  }
+
+  .product__info {
+    margin-bottom: 1.25rem;
+  }
+
+  .product__name {
+    margin-bottom: 1.5rem;
+  }
+
+  .product__desc {
+    margin-bottom: 1.813rem;
+  }
 }
